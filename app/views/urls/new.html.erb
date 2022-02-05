@@ -1,0 +1,15 @@
+<h1>New Url</h1>
+
+<%= form_with model: @url do |form| %>
+  <div>
+    <%= form.label "destination:" %><br>
+    <%= form.text_field :destination %>
+    <% @url.errors.full_messages_for(:destination).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>urls</h1>
+<ul>
+  <% @urls.each do |url| %>
+    <li>
+      <%= link_to url.short, url.destination %> -> <%= url.destination %> <%= link_to "delete",
+                                          url_path(url), data: {
+                                            turbo_method: :delete,
+                                            turbo_confirm: "Are you sure ?"} %>
+    </li>
+  <% end %>
+</ul>
