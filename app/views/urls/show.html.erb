@@ -1,4 +1,14 @@
+<script>
+function copy_url() {
+    let url = document.getElementById("url");
+    url.select();
+    document.execCommand("copy");
+}
+</script>
+
 <h1>your shortened url</h1>
+<input id="url" onclick="this.select();" type="text" value="<%= @base_url + "/" + @url.short %>">
+<button onclick="copy_url();">copy</button>
 <p>
-    <%= link_to @url.short, "/" + @url.short %> -> <%= @url.destination %>
+    destination: <%= link_to @url.destination, @url.destination %>
 </p>

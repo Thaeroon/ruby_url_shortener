@@ -4,6 +4,7 @@ class UrlsController < ApplicationController
   end
 
   def show
+    @base_url = request.base_url
     @url = Url.find(params[:id])
   end
 
