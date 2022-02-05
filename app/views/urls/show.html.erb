@@ -1,4 +1,4 @@
 <h1>your shortened url</h1>
 <p>
-    <%= link_to @url.short, @url.destination %> -> <%= @url.destination %>
+    <%= link_to @url.short, "/" + @url.short %> -> <%= @url.destination %>
 </p>
