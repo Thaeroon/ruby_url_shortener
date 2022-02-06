@@ -1,4 +1,5 @@
 class UrlsController < ApplicationController
+  include UrlUtils
   def index
     @urls = Url.all
   end
@@ -33,8 +34,5 @@ class UrlsController < ApplicationController
     def url_params
       params[:url][:short] = shorten(params[:url][:destination])
       params.require(:url).permit(:destination, :short)
-    end
-    def shorten(long_url)
-      return ('a'..'z').to_a.shuffle[0,8].join
     end
 end
